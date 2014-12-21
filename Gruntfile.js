@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       src: [
         'index.html',
         'README.md',
-        'github-user.js'
+        'bower_components/angular/angular.js'
       ]
     }
   });

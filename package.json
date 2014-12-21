@@ -1,7 +1,7 @@
 {
   "name": "github-user",
   "description": "Fetches info about github user",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": {
     "url": "https://github.com/bahmutov/github-user/issues"
@@ -27,7 +27,6 @@
     "user"
   ],
   "license": "MIT",
-  "main": "github-user.js",
   "pre-commit": "npm test",
   "repository": {
     "type": "git",
