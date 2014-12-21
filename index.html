@@ -5,6 +5,17 @@
   <meta charset="utf-8">
   <title>github-user</title>
   <script src="bower_components/angular/angular.js"></script>
+  <style>
+    .info {
+      white-space: pre;
+      padding: 10px;
+      margin-top: 1em;
+      background-color: #eee;
+      border-radius: 5px;
+      font-family: monospace;
+      border: 1px solid #ddd;
+    }
+  </style>
 </head>
 
 <body ng-app="GithubUser" ng-controller="GithubUserController">
@@ -13,18 +24,26 @@
   <div>
     <input ng-model="username" /> <button id="load" ng-click="load()">Load user info</button>
   </div>
-  <div>
-    {{ info | json }}
-  </div>
+  <div class="info" ng-show="info">{{ info | json }}</div>
 
   <script>
     angular.module('GithubUser', [])
       .controller('GithubUserController', function ($scope, $http) {
+        $scope.username = 'bahmutov';
+
         $scope.load = function () {
           if (!$scope.username) {
             return;
           }
           console.log('loading github user', $scope.username);
+          $http.get('https://api.github.com/users/' + $scope.username)
+            .success(function (data) {
+              console.log(data);
+              $scope.info = data;
+            })
+            .error(function (err) {
+              console.error(err);
+            });
         };
       });
   </script>
