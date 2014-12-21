@@ -2,47 +2,31 @@
 <html lang="en">
 
 <head>
-  <title>service-turtle</title>
+  <meta charset="utf-8">
+  <title>github-user</title>
+  <script src="bower_components/angular/angular.js"></script>
 </head>
 
-<body>
-  <h1>service-turtle</h1>
+<body ng-app="GithubUser" ng-controller="GithubUserController">
+  <h1>github-user</h1>
 
   <div>
-    <button id="fetch">Fetch something</button>
+    <input ng-model="username" /> <button id="load" ng-click="load()">Load user info</button>
+  </div>
+  <div>
+    {{ info | json }}
   </div>
 
   <script>
-    function fetch(url) {
-      var request = new XMLHttpRequest();
-      request.open('GET', url, true);
-
-      request.onload = function() {
-        if (request.status >= 200 && request.status < 400){
-          console.log('response from', url, request.status, request.responseText);
-        } else {
-          // We reached our target server, but it returned an error
-          console.error('some error', url, request.responseText);
-        }
-      };
-
-      request.onerror = function() {
-        // There was a connection error of some sort
-        console.error('error', url, request.responseText);
-      };
-
-      request.send();
-    }
-
-    function onButtonClick() {
-      console.log('button clicked');
-      fetch('/some/url');
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('#fetch').addEventListener('click', onButtonClick);
-    });
+    angular.module('GithubUser', [])
+      .controller('GithubUserController', function ($scope, $http) {
+        $scope.load = function () {
+          if (!$scope.username) {
+            return;
+          }
+          console.log('loading github user', $scope.username);
+        };
+      });
   </script>
-  <script src="turtle.js"></script>
 </body>
 </html>
