@@ -1,8 +1,8 @@
 {
-  "name": "service-turtle",
-  "main": "turtles.js",
-  "version": "0.1.1",
-  "homepage": "https://github.com/bahmutov/service-turtle",
+  "name": "github-user",
+  "main": "github-user.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bahmutov/github-user",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -17,13 +17,8 @@
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "keywords": [
-    "testing",
-    "test",
-    "exploratory",
-    "mock",
-    "fake",
-    "http",
-    "proxy",
-    "ServiceWorker"
+    "github",
+    "git",
+    "user"
   ]
 }
