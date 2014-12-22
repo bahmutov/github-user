@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="bower_components/angular/angular-csp.css">
   <title>github-user</title>
   <style>
     .info {
@@ -20,7 +21,7 @@
 <body>
   <h1>github-user</h1>
 
-  <div ng-app="GithubUser" ng-controller="GithubUserController">
+  <div ng-app="GithubUser" ng-controller="GithubUserController" ng-cloak>
     <input ng-model="username" /> <button id="load" ng-click="load()">Load user info</button>
     <div class="info" ng-show="info">{{ info | json }}</div>
   </div>
