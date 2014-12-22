@@ -3,7 +3,6 @@
   "port": 8008,
   "debug": true,
   "urls": {
-
     "angular.js": 5000
   }
 }
