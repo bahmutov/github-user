@@ -2,6 +2,8 @@
 
 > Fetches information about a github user
 
+![screenshot](images/github-user.png)
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014

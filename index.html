@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="bower_components/angular/angular-csp.css">
+  <script src="bower_components/service-turtle/turtle.js"></script>
   <title>github-user</title>
-  <script src="bower_components/angular/angular.js"></script>
   <style>
     .info {
       white-space: pre;
@@ -18,14 +19,15 @@
   </style>
 </head>
 
-<body ng-app="GithubUser" ng-controller="GithubUserController">
+<body>
   <h1>github-user</h1>
 
-  <div>
+  <div ng-app="GithubUser" ng-controller="GithubUserController" ng-cloak>
     <input ng-model="username" /> <button id="load" ng-click="load()">Load user info</button>
+    <div class="info" ng-show="info">{{ info | json }}</div>
   </div>
-  <div class="info" ng-show="info">{{ info | json }}</div>
 
+  <script src="bower_components/angular/angular.js"></script>
   <script>
     angular.module('GithubUser', [])
       .controller('GithubUserController', function ($scope, $http) {
@@ -37,11 +39,11 @@
           }
           console.log('loading github user', $scope.username);
           $http.get('https://api.github.com/users/' + $scope.username)
-            .success(function (data) {
+            .then(function (data) {
               console.log(data);
               $scope.info = data;
-            })
-            .error(function (err) {
+            }, function (err) {
+              $scope.info = 'Could not fetch info for user ' + $scope.username;
               console.error(err);
             });
         };
