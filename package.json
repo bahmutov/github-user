@@ -27,6 +27,7 @@
     "user"
   ],
   "license": "MIT",
+  "main": "turtle.js",
   "pre-commit": "npm test",
   "repository": {
     "type": "git",
