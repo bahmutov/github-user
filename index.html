@@ -39,9 +39,9 @@
           }
           console.log('loading github user', $scope.username);
           $http.get('https://api.github.com/users/' + $scope.username)
-            .then(function (data) {
-              console.log(data);
-              $scope.info = data;
+            .then(function (response) {
+              console.log(response.data);
+              $scope.info = response.data;
             }, function (err) {
               $scope.info = 'Could not fetch info for user ' + $scope.username;
               console.error(err);
