@@ -4,6 +4,8 @@
 
 ![screenshot](images/github-user.png)
 
+Read [Robustness testing using proxies][http://bahmutov.calepin.co/robustness-testing-using-proxies.html]
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014
