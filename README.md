@@ -4,7 +4,7 @@
 
 ![screenshot](images/github-user.png)
 
-Read [Robustness testing using proxies][http://bahmutov.calepin.co/robustness-testing-using-proxies.html]
+Read [Robustness testing using proxies](http://glebbahmutov.com/blog/robustness-testing-using-proxies/)
 
 ### Small print
 
@@ -12,7 +12,7 @@ Author: Gleb Bahmutov &copy; 2014
 
 * [@bahmutov](https://twitter.com/bahmutov)
 * [glebbahmutov.com](http://glebbahmutov.com)
-* [blog](http://bahmutov.calepin.co/)
+* [blog](http://glebbahmutov.com/blog)
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
